@@ -1,5 +1,5 @@
 /* For Mobile phones */
-#navbar {
+.navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -9,11 +9,15 @@
 }
 
 .navbar > * {
-    float: left;
+    float: right;
     font-size: 16px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+.section-links > hr {
+    display: none;
 }
 
 /* checkbox hack */
@@ -39,6 +43,7 @@ input[type=checkbox] {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    float: none;
 }
 
 /* caret */
@@ -46,7 +51,8 @@ input[type=checkbox] {
     border: solid black;
     border-width: 0 3px 3px 0;
     display: inherit;
-    padding: 3px;
+    float: right;
+    padding: 3px 3px 3px 3px;
     transform: rotate(45deg);
 }
 
@@ -78,19 +84,54 @@ input[type=checkbox] {
 /* NOT MOBILE */
 @media only screen and (min-width: 768px) {
 
-    /* Shows dropdown menu when hovering */
-    .dropdown:hover .section-links, .dropdown:active *{
+    #navbar {
+        top: 0;
+        left: 0;
+        width: 165px;
+        height: 100%;
+    }
+
+    /* lines up header of navbar */
+    .navbar > header {
+        padding: 10px;
+        width: 100%;
+        font-size: 20pt;
+        text-align: center;
+        padding-bottom: 0;
+    }
+    
+    /* Hides dropdown toggle */
+    .dropdown > label {
+        display: none;
+    }
+
+    /* Displays links on left side */
+    .section-links {
         display: block;
-        z-index: 1;
+        left: 0;
+        min-width: none;
+        box-shadow: none;
+        background-color: inherit;
     }
-    
-    /* changes Sections label color */
-    .dropdown:hover .dropbtn {
-      background-color: red;
+
+    /* Shows separating lines */
+    .section-links > hr {
+        display: block;
+        width: 100%;
     }
-    
+
+    /* Pervents text from being covered by navbar */
+    #main-doc {
+        position: relative;
+        width: 78%;
+        padding: 1% 0% 5% 0px;
+        margin-left: 170px;
+        z-index: 2;
+    }
+
 }
 
+/* perhaps I can take away the mediaquery here now that 've made the other element go buh-bye */
 /* Mobile Phone */
 @media only screen and (max-width: 768px) {
     input[type=checkbox]:checked ~ div {
@@ -108,14 +149,12 @@ header {
 body {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
     margin: 0;
     padding: 0;
 }
 
 /* Display main w/out margins */
 main {
-    border: 1px solid black;
     width: 100%;
     height: 100%;
 }
