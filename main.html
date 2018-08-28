@@ -20,12 +20,24 @@
 
             <!-- Container to position the button -->
             <div class="dropdown">
+
+                <!-- TESTING -->
                 <!-- Element to open dropdown menu -->
-                <button class="dropbtn">Sections
+                <!-- <button class="dropbtn">Sections
                     <i class="caret"></i>
-                </button>
+                </button> -->
+
+                <!-- Checkbox hack -->
+                <label for="toggle-dropdown" class="dropbtn">Sections
+                    <!-- SOMETHING WRONG WITH CARET <DIV> -->
+                    <!-- <i class="caret"></i> -->
+                </label>
+                <input type="checkbox" id="toggle-dropdown">
+                <!-- <div class="checkbox-hack">Control me</div> -->
+
+                <!-- NOT TESTING -->
                 <!-- Container for links -->
-                <div class="section-links">
+                <div class="section-links checkbox-hack">
                     <a href="#Introduction" class="nav-link">Introduction</a>
 
                     <a href="#javascript_and_java" class="nav-link">JavaScript and Java</a>
@@ -38,12 +50,13 @@
 
                     <a href="#variable_scope" class="nav-link">Variable scope</a>
                 </div>
+
             </div>
+
         </nav>
       
-        <main role="main" id="main-doc">
 
-            This is where the technical documentation will go. 
+        <main role="main" id="main-doc">
 
             <section class="main-section" id="Introduction">
 

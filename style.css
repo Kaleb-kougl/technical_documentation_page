@@ -16,6 +16,14 @@
     text-decoration: none;
 }
 
+/* checkbox hack */
+input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    /* mobile- position checkbox on top of clickable area and turn opacity to 0 instead */
+}
+
 /* Align dropdown container */
 .dropdown {
     float: left;
@@ -42,11 +50,6 @@
     transform: rotate(45deg);
 }
 
-/* hover affect for navbar */
-.navbar a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
-}
-
 /* Hide dropdown links */
 .section-links {
     display: none;
@@ -57,7 +60,7 @@
     z-index: 1;
 }
 
-/* align links inside dropdown */
+/* Styling of dropdown menu */
 .section-links a {
     float: none;
     color: black;
@@ -72,26 +75,47 @@
     background-color: #ddd;
 }
 
-/* Display dropdown menu on hover */
-.dropdown:hover .section-links {
-    display: block;
-    z-index: 1;
+/* NOT MOBILE */
+@media only screen and (min-width: 768px) {
+
+    /* Shows dropdown menu when hovering */
+    .dropdown:hover .section-links, .dropdown:active *{
+        display: block;
+        z-index: 1;
+    }
+    
+    /* changes Sections label color */
+    .dropdown:hover .dropbtn {
+      background-color: red;
+    }
+    
+}
+
+/* Mobile Phone */
+@media only screen and (max-width: 768px) {
+    input[type=checkbox]:checked ~ div {
+        display: block;
+        z-index: 1;
+    }
 }
 
 header {
     font-size: 24pt;
+    /* margin-top: 40px; */
 }
 
+/* Display body w/out margins */
 body {
     width: 100%;
     height: 100%;
     border: 1px solid red;
+    margin: 0;
+    padding: 0;
 }
 
+/* Display main w/out margins */
 main {
     border: 1px solid black;
     width: 100%;
     height: 100%;
 }
-
-/* Just need to add the navigation bar and media queries */
