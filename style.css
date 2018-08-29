@@ -138,6 +138,14 @@ input[type=checkbox] {
         display: block;
         z-index: 1;
     }
+
+    main > .main-section {
+        padding-top: 48px;
+    }
+
+    input[type=checkbox]:checked ~ label >i {
+        border-width: 3px 0px 0px 3px;
+    }
 }
 
 header {
@@ -157,4 +165,12 @@ body {
 main {
     width: 100%;
     height: 100%;
+}
+
+/* Makes the code look cool */
+code {
+    display: block;
+    background-color: black;
+    color: greenyellow;
+    padding-left: 10px;
 }
